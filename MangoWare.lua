@@ -5,13 +5,10 @@ local ReGui = loadstring(game:HttpGet('https://raw.githubusercontent.com/depthso
 --// Declare the Prefabs asset
 
 
-ReGui:Init({
-	Prefabs = InsertService:LoadLocalAsset(PrefabsId)
-})
 
 
 
-
+ReGui:init()
 ReGui:DefineTheme("Orange", {
 	TitleAlign = Enum.TextXAlignment.Center,
 	TextDisabled = Color3.fromRGB(0,128,0),
