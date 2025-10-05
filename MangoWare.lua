@@ -3,7 +3,7 @@ local InsertService = game:GetService("InsertService")
 local ReGui = loadstring(game:HttpGet('https://raw.githubusercontent.com/depthso/Dear-ReGui/refs/heads/main/ReGui.lua'))()
 
 --// Declare the Prefabs asset
-local PrefabsId = "rbxassetid://" .. ReGui.PrefabsId -- Добавьте эту строку
+
 
 ReGui:Init({
 	Prefabs = InsertService:LoadLocalAsset(PrefabsId)
