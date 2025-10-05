@@ -44,19 +44,17 @@ local MHMainWindow = ReGui:Window({
 })
 
 
-local Visual = MHMainWindow:CreateTab({
-	Name="Visual"
-})
 
 
-Visual:Label({
+
+MHMainWindow:Label({
     Text = "Esp"
 })
 
-Visual:Separator()
+MHMainWindow:Separator()
 
 
-local TracerToggle = Visual:Checkbox({
+local TracerToggle = MHMainWindow:Checkbox({
 	Value = false,
 	Label = "Esp line",
 	Callback = function(self)
@@ -66,17 +64,17 @@ local TracerToggle = Visual:Checkbox({
 
 
 
-local TracerColor = Visual:SliderColor3({
+local TracerColor = MHMainWindow:SliderColor3({
     Value = Color3.fromRGB(255,255,255),
     Label = "Line Color"
 })
 
 
-Visual:Separator()
+MHMainWindow:Separator()
 
 
 
-local BoxToggle = Visual:Checkbox({
+local BoxToggle = MHMainWindow:Checkbox({
 	Value = false,
 	Label = "Esp Box",
 	Callback = function(self)
@@ -85,7 +83,7 @@ local BoxToggle = Visual:Checkbox({
 })
 
 
-local BoxColor = Visual:SliderColor3({
+local BoxColor = MHMainWindow:SliderColor3({
     Value = Color3.fromRGB(255,255,255),
     Label = "Box Color"
 })
