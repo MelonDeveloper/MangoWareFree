@@ -41,6 +41,7 @@ ReGui:DefineTheme("Orange", {
 local MHMainWindow = ReGui:Window({
 	Title = "Mangohub Testnet",
 	Size = UDim2.fromOffset(300, 200)
+	Theme = "Pink Theme"
 })
 
 
