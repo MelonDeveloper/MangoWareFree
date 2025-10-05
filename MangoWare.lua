@@ -38,10 +38,10 @@ ReGui:DefineTheme("Orange", {
 	RegionBgTransparency = 1,
 })
 
-local MHMainWindow = ReGui:Window({
+local MHMainWindow = ReGui:TabsWindow({
 	Title = "Mangohub Testnet",
 	Size = UDim2.fromOffset(300, 200)
-	Theme = Orange
+	Theme = "Orange"
 })
 
 
