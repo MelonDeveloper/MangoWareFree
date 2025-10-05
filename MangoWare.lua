@@ -11,7 +11,7 @@ ReGui:Init({
 
 
 
-ReGui:Init()
+
 ReGui:DefineTheme("Orange", {
 	TitleAlign = Enum.TextXAlignment.Center,
 	TextDisabled = Color3.fromRGB(0,128,0),
