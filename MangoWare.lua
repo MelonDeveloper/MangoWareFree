@@ -17,7 +17,7 @@ MHMainWindow:Label({
 MHMainWindow:Separator()
 
 
-local TracerToggle = MHMainWindow:Checkbox({
+TracerToggle = MHMainWindow:Checkbox({
 	Value = false,
 	Label = "Esp line",
 	Callback = function(self)
@@ -27,7 +27,7 @@ local TracerToggle = MHMainWindow:Checkbox({
 
 
 
-local TracerColor = MHMainWindow:SliderColor3({
+TracerColor = MHMainWindow:SliderColor3({
     Value = Color3.fromRGB(255,255,255),
     Label = "Line Color"
 })
@@ -37,7 +37,7 @@ MHMainWindow:Separator()
 
 
 
-local BoxToggle = MHMainWindow:Checkbox({
+BoxToggle = MHMainWindow:Checkbox({
 	Value = false,
 	Label = "Esp Box",
 	Callback = function(self)
@@ -46,7 +46,7 @@ local BoxToggle = MHMainWindow:Checkbox({
 })
 
 
-local BoxColor = MHMainWindow:SliderColor3({
+BoxColor = MHMainWindow:SliderColor3({
     Value = Color3.fromRGB(255,255,255),
     Label = "Box Color"
 })
