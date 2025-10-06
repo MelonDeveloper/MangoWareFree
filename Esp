@@ -1,0 +1,79 @@
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local Camera = workspace.CurrentCamera
+
+local localPlayer = Players.LocalPlayer
+local lines = {}  -- Таблица для хранения линий (ключ — игрок, значение — линия)
+local connection  -- Для хранения соединения с RenderStepped
+
+-- Функция для запуска отрисовки линий
+local function StartDrawingLines()
+    if connection then
+        return  -- Уже запущено
+    end
+    
+    -- Подключаем обновление каждый кадр
+    connection = RunService.RenderStepped:Connect(function()
+        local center = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y / 2)
+        
+        -- Обновляем/создаём линии для всех игроков
+        for _, player in pairs(Players:GetPlayers()) do
+            if player ~= localPlayer and player.Character and player.Character:FindFirstChild("Head") then
+                local head = player.Character.Head
+                local screenPos, onScreen = Camera:WorldToScreenPoint(head.Position)
+                
+                if onScreen then
+                    -- Создаём или обновляем линию
+                    if not lines[player] then
+                        local line = Drawing.new("Line")
+                        line.Color = Color3.new(1, 0, 0)  -- Красный цвет
+                        line.Thickness = 2
+                        line.Transparency = 1
+                        lines[player] = line
+                    end
+                    
+                    lines[player].From = center
+                    lines[player].To = Vector2.new(screenPos.X, screenPos.Y)
+                    lines[player].Visible = true
+                else
+                    -- Скрываем линию, если игрок вне экрана
+                    if lines[player] then
+                        lines[player].Visible = false
+                    end
+                end
+            else
+                -- Удаляем линию, если персонаж не существует
+                if lines[player] then
+                    lines[player]:Remove()
+                    lines[player] = nil
+                end
+            end
+        end
+        
+        -- Удаляем линии для вышедших игроков
+        for player, line in pairs(lines) do
+            if not player.Parent then
+                line:Remove()
+                lines[player] = nil
+            end
+        end
+    end)
+end
+
+-- Функция для остановки и удаления всех линий
+local function StopDrawingLines()
+    if connection then
+        connection:Disconnect()
+        connection = nil
+    end
+    
+    -- Удаляем все линии
+    for _, line in pairs(lines) do
+        line:Remove()
+    end
+    lines = {}
+end
+
+-- Пример использования (можно вызвать из консоли или другого скрипта)
+-- StartDrawingLines()  -- Запустить
+-- StopDrawingLines()   -- Остановить
