@@ -2,16 +2,6 @@ local InsertService = game:GetService("InsertService")
 
 local ReGui = loadstring(game:HttpGet('https://raw.githubusercontent.com/depthso/Dear-ReGui/refs/heads/main/ReGui.lua'))()
 
---// Declare the Prefabs asset
-local PrefabsId = "rbxassetid://" .. ReGui.PrefabsId -- Добавьте эту строку
-
-ReGui:Init({
-	Prefabs = InsertService:LoadLocalAsset(PrefabsId)
-})
-
-
-
-ReGui:Init()
 ReGui:DefineTheme("Orange", {
 	TitleAlign = Enum.TextXAlignment.Center,
 	TextDisabled = Color3.fromRGB(0,128,0),
