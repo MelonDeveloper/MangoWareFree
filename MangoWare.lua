@@ -2,7 +2,7 @@
 local ReGui = loadstring(game:HttpGet('https://raw.githubusercontent.com/depthso/Dear-ReGui/refs/heads/main/ReGui.lua'))()
 
 local MHMainWindow = ReGui:Window({
-	Title = "Mangohub Testnet",
+	Title = "MiniMod        |        t.me/FattySpy",
 	Size = UDim2.fromOffset(300, 200)
 })
 
