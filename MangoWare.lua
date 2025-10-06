@@ -122,7 +122,7 @@ end
 local MHMainWindow = ReGui:Window({
 	Title = "MiniMod|t.me/FattySpy",
 	Size = UDim2.fromOffset(300, 200)
-	Theme = "Orange"
+	Theme = "Orange",
 })
 
 
@@ -130,7 +130,7 @@ local MHMainWindow = ReGui:Window({
 
 
 MHMainWindow:Label({
-    Text = "Esp"
+    Text = "Esp",
 })
 
 MHMainWindow:Separator()
@@ -151,7 +151,7 @@ TracerToggle = MHMainWindow:Checkbox({
 
 TracerColor = MHMainWindow:SliderColor3({
     Value = Color3.fromRGB(255,255,255),
-    Label = "Line Color"
+    Label = "Line Color",
 })
 
 
@@ -170,5 +170,5 @@ BoxToggle = MHMainWindow:Checkbox({
 
 BoxColor = MHMainWindow:SliderColor3({
     Value = Color3.fromRGB(255,255,255),
-    Label = "Box Color"
+    Label = "Box Color",
 })
