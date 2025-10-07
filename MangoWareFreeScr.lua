@@ -5,6 +5,7 @@ local Window22 = ReGui:Window({
 	Title = "MangoWare",
 	NoClose = false,
 	Size = UDim2.new(0, 400, 0, 250)
+	Position = (0,0,0,0)
 })
 
 
@@ -63,6 +64,7 @@ Callback = function()
             game.Players.LocalPlayer.Character.Humanoid.Health += sliH.Value
         end,
 })
+
 
 
 
