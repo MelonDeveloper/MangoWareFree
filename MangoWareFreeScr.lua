@@ -1,7 +1,7 @@
 local ReGui = loadstring(game:HttpGet('https://raw.githubusercontent.com/depthso/Dear-ReGui/refs/heads/main/ReGui.lua'))()
 
 
-local Window = ReGui:Window({
+local Window22 = ReGui:Window({
 	Title = "MangoWare",
 	NoClose = false,
 	Size = UDim2.new(0, 400, 0, 250)
@@ -12,12 +12,12 @@ local Window = ReGui:Window({
 
 
 
-local Tab1 = Window:CreateTab({Name = "Main"}) --> Canvas
+local Tab1 = Window22:CreateTab({Name = "Main"}) --> Canvas
 Tab1:Label({Text = "Made by t.me/x1r441"})
 
-local Tab2 = Window:CreateTab({Name = "Player"})
+local Tab2 = Window22:CreateTab({Name = "Player"})
 
-local Tab3 = Window:CreateTab({Name = "Visual"})
+local Tab3 = Window22:CreateTab({Name = "Visual"})
 
 local sliSpeed = Tab2:SliderInt({
     Label = "Speed",
@@ -63,5 +63,6 @@ Callback = function()
             game.Players.LocalPlayer.Character.Humanoid.Health += sliH.Value
         end,
 })
+
 
 
